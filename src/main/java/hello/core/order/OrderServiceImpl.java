@@ -8,12 +8,18 @@ import hello.core.member.MemberRepository;
 import hello.core.member.MemoryMemberRepository;
 
 
-//주문 생성 요청이오면
+//주문 생성 요청이오면b
 public class OrderServiceImpl implements OrderService {
 
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
-//    private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
-    private  final  DiscountPolicy discountPolicy = new RateDiscountPolicy();
+    private final MemberRepository memberRepository;
+    private final DiscountPolicy discountPolicy;
+
+    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+        this.memberRepository = memberRepository;
+        this.discountPolicy = discountPolicy;
+    }
+
+    //    private  final  DiscountPolicy discountPolicy = new RateDiscountPolicy();
 //    private  DiscountPolicy discountPolicy; //인터페이스에만 의존하지만 NPE 발생
 
 
