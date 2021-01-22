@@ -6,23 +6,21 @@ import hello.core.discount.RateDiscountPolicy;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
 import hello.core.member.MemoryMemberRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 
 
 @Component
-//주문 생성 요청이오면b
+@RequiredArgsConstructor
+//주문 생성 요청이오면
 public class OrderServiceImpl implements OrderService {
 
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
 
-    @Autowired
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
-        this.memberRepository = memberRepository;
-        this.discountPolicy = discountPolicy;
-    }
+    // 생성자가 하나면 생략 가능 @Autowired
 
     //    private  final  DiscountPolicy discountPolicy = new RateDiscountPolicy();
 //    private  DiscountPolicy discountPolicy; //인터페이스에만 의존하지만 NPE 발생

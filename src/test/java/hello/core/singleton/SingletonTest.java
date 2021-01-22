@@ -26,6 +26,7 @@ public class SingletonTest {
         System.out.println("memberService2 = " + memberService2);
         // -> 조회 할 때마다 계속 새로운 객체가 생성된다. JVM 메모리에 영향을 많이준다(비효율적)
 
+
         //memberService1은 != memberService2와 달라야한다.
         Assertions.assertThat(memberService1).isNotSameAs(memberService2);
     }
@@ -61,7 +62,7 @@ public class SingletonTest {
         System.out.println("memberService2 = " + memberService2);
         // -> 조회 할 때마다 계속 새로운 객체가 생성된다. JVM 메모리에 영향을 많이준다(비효율적)
 
-        //memberService1은 != memberService2와 달라야한다.
+        //객체를 새로 생성한다면 memberService1은 != memberService2와 달라야한다.
         Assertions.assertThat(memberService1).isSameAs(memberService2);
     }
 }

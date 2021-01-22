@@ -2,7 +2,6 @@ package hello.core.singleton;
 
 public class SingletonService {
 
-
     //static 설정 시 클래스 level에 올라가기 때문에 하나만 존재한다.
     private static final SingletonService instance = new SingletonService();
 
