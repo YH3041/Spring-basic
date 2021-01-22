@@ -1,5 +1,8 @@
 package hello.core.member;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class MemberServiceImpl implements MemberService {
 
     //여기에 MemoryMemberRepository가 할당된다.
